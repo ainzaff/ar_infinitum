@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  mode: 'development',
   entry: './src/main.js',
   output: {
     filename: 'packed.js',
@@ -10,6 +11,9 @@ module.exports = {
     minimize: false
   },
   devServer: {
+    server: {
+      type: 'https'
+    },
     static: {
       directory: path.join(__dirname, 'docs'),
     },
